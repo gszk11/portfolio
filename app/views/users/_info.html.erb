@@ -1,0 +1,24 @@
+<div class='col-md-3'>
+  <h2>ユーザー情報</h2>
+  <table class='table'>
+    <tr>
+      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "default-image.jpg" %>
+    </tr>
+    <tr>
+      <th>名前</th>
+      <th><%= user.name %></th>
+    </tr>
+    <tr>
+      <th>紹介</th>
+      <th><%= user.introduction %></th>
+    </tr>
+  </table>　 
+  <div class='row'>
+    <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary btn-block" do %>
+      <i class="fas fa-user-cog"></i>
+    <% end %>
+    <%= link_to new_movie_path, class: "btn btn-outline-success btn-block" do %>
+      感想を投稿する
+    <% end %>
+  </div>
+</div>
