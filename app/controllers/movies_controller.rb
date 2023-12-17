@@ -8,6 +8,16 @@ class MoviesController < ApplicationController
   def new
     @movie = Movie.new
   end
+  
+  def create
+    @movie = Movie.new(movie_params)
+    @movie.user_id = current_user.id
+    if @movie.save
+      redirect_to movie_path(@movie.id)
+    else
+      render :new
+    end
+  end
 
   def edit
   end
