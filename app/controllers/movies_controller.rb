@@ -4,6 +4,12 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
   
+  def search
+    @user = User.find(current_user.id)
+    @movies = Movie.where('genre LIKE ?', "%#{params[:genre]}%")
+    render :index
+  end
+  
   def show
   end
 
@@ -16,7 +22,7 @@ class MoviesController < ApplicationController
     @movie.user_id = current_user.id
     if @movie.save
       redirect_to movie_path(@movie.id)
-    else
+    else 
       render :new
     end
   end
