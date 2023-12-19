@@ -2,8 +2,9 @@ class MovieCommentsController < ApplicationController
   
   def create
     movie = Movie.find(params[:movie_id])
-    comment = MovieComment.new(movie_params)
+    comment = MovieComment.new(movie_comment_params)
     comment.user_id = current_user.id
+    comment.movie_id = movie.id
     comment.save
     redirect_to movie_path(movie.id)
   end
