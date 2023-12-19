@@ -11,6 +11,9 @@ class MoviesController < ApplicationController
   end
   
   def show
+    @movie = Movie.find(params[:id])
+    @user = @movie.user
+    @movie_comment = MovieComment.new
   end
 
   def new
