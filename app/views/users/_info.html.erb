@@ -14,11 +14,9 @@
     </tr>
   </table>　 
   <div class='row'>
-    <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary btn-block" do %>
+    <%= link_to edit_user_path(user.id), class: "btn btn-secondary btn-block" do %>
       <i class="fas fa-user-cog"></i>
     <% end %>
-    <%= link_to new_movie_path, class: "btn btn-outline-success btn-block" do %>
-      レビューを投稿する
-    <% end %>
+    <%= link_to "レビューを投稿", new_movie_path, class: "btn btn-success btn-block" %>
   </div>
 </div>
