@@ -16,3 +16,9 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+.background {
+  background-image: url(white-popcorn.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
