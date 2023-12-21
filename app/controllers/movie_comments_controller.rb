@@ -1,5 +1,4 @@
 class MovieCommentsController < ApplicationController
-  
   def create
     movie = Movie.find(params[:movie_id])
     comment = MovieComment.new(movie_comment_params)
