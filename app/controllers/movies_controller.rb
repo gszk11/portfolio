@@ -32,6 +32,9 @@ class MoviesController < ApplicationController
 
   def edit
     @movie = Movie.find(params[:id])
+    if @movie.user_id != current_user.id
+      redirect_to movies_path
+    end
   end
   
   def update
