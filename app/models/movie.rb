@@ -8,6 +8,6 @@ class Movie < ApplicationRecord
   end
   
   validates :title, presence: true
-  validates :body, presence: true, length: { maximum:200 }
+  validates :body, presence: true, length: { maximum:100 }
   validates :genre, presence: true
 end
