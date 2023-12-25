@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
   
   def search
     @user = User.find(current_user.id)
-    @movies = Movie.where('genre LIKE ?', "%#{params[:genre]}%")
+    @movies = Movie.where('genre LIKE ?', "%#{params[:genre]}%").page(params[:page])
     render :index
   end
   
