@@ -10,4 +10,12 @@ class Movie < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true, length: { maximum:100 }
   validates :genre, presence: true
+  
+  def self.search(search)
+    if search != ""
+      Movie.where(['title LIKE(?) OR genre LIKE(?)', "%#{search}%", "%#{search}%"])
+    else 
+      Movie.none
+    end
+  end
 end
