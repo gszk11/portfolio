@@ -4,9 +4,9 @@
       <%= render 'users/info', {user: @user} %>
       <div class="col-md-8 offset-md-1">
         <h2 class="font">映画一覧</h2>
-        <%= form_tag(movie_search_path, method: "get") do %>
-          <%= select_tag(:genre, options_for_select([["アクション", "アクション"], ["アドベンチャー", "アドベンチャー"], ["アニメ", "アニメ"], ["ファンタジー", "ファンタジー"], ["ミステリー", "ミステリー"], ["恋愛", "恋愛"], ["SF", "SF"], ["その他", "その他"]])) %>
-          <%= submit_tag "絞り込み" %>
+        <%= form_with url: movie_search_path, local: true, method: :get do |f| %>
+          <%= f.text_field :keyword, placeholder: "タイトルまたはジャンル" %>
+          <%= f.submit "検索" %>
         <% end %>
         <table class="table">
           <thead>
