@@ -58,4 +58,26 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  
+  # Default url for mailer
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # メール送信失敗時のエラーを発生させる
+  config.action_mailer.raise_delivery_errors = true
+  # メール送信にSMTPを使用する
+  config.action_mailer.delivery_method = :smtp
+  # SMPTの詳細設定
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    # HELOコマンドで使用するドメイン、たぶん無くてもok
+    domain: 'smtp.gmail.com',
+    # Gmailのメールアドレス
+    user_name: ENV['GOOGLE_MAIL_ADDRESS'],
+    # Googleのアプリパスワード
+    password: ENV['GOOGLE_APP_PASSWORD'],
+    # メールサーバーの認証の種類
+    authentication: 'plain',
+    # STARTTLSを自動検出して有効化
+    enable_starttls: true
+  }
 end
