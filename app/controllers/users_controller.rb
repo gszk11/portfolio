@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     @user = User.find(current_user.id)
-    @users = User.all
+    @users = User.page(params[:page])
   end
 
   def show
