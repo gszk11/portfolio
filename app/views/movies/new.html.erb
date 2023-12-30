@@ -7,9 +7,9 @@
           <% if @movie.errors.any? %>
             <h3><%= @movie.errors.count %> 件のエラーにより保存できませんでした:</h3>
             <ul>
-              <% @movie.errors.full_messages.each do |message| %>
+            <% @movie.errors.full_messages.each do |message| %>
               <li><%= message %></li>
-              <% end %>
+            <% end %>
             </ul>
           <% end %>
           <div class="form-group">
