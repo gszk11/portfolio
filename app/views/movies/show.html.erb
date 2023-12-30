@@ -61,6 +61,14 @@
           </tbody>
         </table>
         <h4>コメントを投稿</h4>
+        <% if @movie_comment.errors.any? %>
+          <h3><%= @movie_comment.errors.count %> 件のエラーにより保存できませんでした:</h3>
+          <ul>
+          <% @movie_comment.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        <% end %>
         <%= form_with(model:[@movie, @movie_comment], local: true) do |f| %>
         　<%= f.text_area :comment, rows:'3',placeholder: "コメントをここに" %>
         　<%= f.submit "投稿" %>
