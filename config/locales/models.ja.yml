@@ -11,3 +11,5 @@ ja:
         title: タイトル
         body: レビュー
         genre: ジャンル
+      movie_comment:
+        comment: コメント
