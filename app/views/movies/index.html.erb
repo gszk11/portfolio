@@ -6,7 +6,9 @@
         <h2 class="font">映画一覧</h2>
         <%= form_with url: movie_search_path, local: true, method: :get do |f| %>
           <%= f.text_field :keyword, placeholder: "タイトルまたはジャンル" %>
-          <%= f.submit "検索" %>
+          <%= button_tag type: "submit", class: "btn-default" do %>
+            <i class="fas fa-search">検索</i>
+          <% end %>
         <% end %>
         <table class="table">
           <thead>
