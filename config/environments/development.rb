@@ -60,7 +60,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
   # Default url for mailer
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: "5d2b8a0b5d594d529dc5ed45b11635a6.vfs.cloud9.ap-northeast-1.amazonaws.com"}
   # メール送信失敗時のエラーを発生させる
   config.action_mailer.raise_delivery_errors = true
   # メール送信にSMTPを使用する
@@ -72,12 +72,16 @@ Rails.application.configure do
     # HELOコマンドで使用するドメイン、たぶん無くてもok
     domain: 'smtp.gmail.com',
     # Gmailのメールアドレス
-    user_name: ENV['GOOGLE_MAIL_ADDRESS'],
+    user_name: 'railstestpp@gmail.com',
     # Googleのアプリパスワード
-    password: ENV['GOOGLE_APP_PASSWORD'],
+    password: 'ghxgcwelrwvcyycb',
     # メールサーバーの認証の種類
     authentication: 'plain',
     # STARTTLSを自動検出して有効化
-    enable_starttls: true
+    enable_starttls_auto: true,
+    #tls: false,
+    enable_starttls: true,
+    open_timeout:    5,
+    read_timeout:    5,
   }
 end
