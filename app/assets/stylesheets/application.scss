@@ -31,3 +31,24 @@
 .margin {
   margin-right: 10px;
 }
+
+@media screen and (max-width:1024px) {
+  .background {
+    height: 1000px;
+    background-image: none;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .background {
+    height: 1000px;
+    background-image: none;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .background {
+    height: 1000px;
+    background-image: none;
+  }
+}
