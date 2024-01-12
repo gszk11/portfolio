@@ -76,6 +76,6 @@ gem 'devise-i18n-views'
 
 gem 'kaminari','~> 1.2.1'
 
-gem 'dotenv'
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'mysql2', '>= 0.4.4', '< 0.6.0' , group: :production
