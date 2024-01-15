@@ -60,7 +60,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Default url for mailer
-  config.action_mailer.default_url_options = { host: "5d2b8a0b5d594d529dc5ed45b11635a6.vfs.cloud9.ap-northeast-1.amazonaws.com"}
+  config.action_mailer.default_url_options = { host: "f320e889b9514d6ab3bb098a86760e9f.vfs.cloud9.ap-northeast-1.amazonaws.com"}
   # メール送信失敗時のエラーを発生させる
   config.action_mailer.raise_delivery_errors = true
   # メール送信にSMTPを使用する

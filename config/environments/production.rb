@@ -62,7 +62,7 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_nameprefix = "MovieTime#{Rails.env}"
-config.action_mailer.perform_caching = false
+  config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -92,7 +92,7 @@ config.action_mailer.perform_caching = false
   config.active_record.dump_schema_after_migration = false
   
   # Default url for mailer
-  config.action_mailer.default_url_options = { protocol: 'https', host:'movie-time1-1be26ec91838.herokuapp.com' }
+  config.action_mailer.default_url_options = { protocol: 'https', host:'movie-time-1933b5550734.herokuapp.com' }
   # メール送信失敗時のエラーを発生させる
   config.action_mailer.raise_delivery_errors = true
   # メール送信にSMTPを使用する
